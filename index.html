@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlador de Turnos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu flx-rw-r">
+            <img src="./logo.png" alt="">
+            <h2>Escala de funcionários</h2>    
+            <nav>
+                <a href="funcionario.html">Funcionários</a>
+            </nav>
+        </div>
+        
+        <h3>Selecione o Setor correspondente</h3>
+        <select id="filtro-setor">
+            <option value="Todos">Todos</option>
+            <option value="Atendimento">Atendimento</option>
+            <option value="Cozinha">Cozinha</option>
+            <option value="Entregas">Entregas</option>
+        </select>
+        <h1>Controlador de Turnos</h1>
+
+        <!-- Tabela de Escala -->
+        <table id="escala">
+            <thead>
+                <tr>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-escala">
+                <!-- Seis células por dia - Linhas dinâmicas -->
+                <!-- Linhas da tabela -->
+            </tbody>
+        </table>
+        <div class="flx-rw">
+            <button id="adicionar-escala">Adicionar Linha</button>
+            <button id="remover-escala">Remover Linha</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

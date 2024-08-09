@@ -1,0 +1,178 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Cor de fundo clara */
+    color: #333; /* Cor do texto escura */
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    max-width: 80%;
+    margin: auto;
+    background-color: #ffffff; /* Cor de fundo dos containers */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra mais clara */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #ff6600; /* Cor laranja para os títulos */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ccc; /* Cor da borda mais clara */
+    padding: 10px;
+    text-align: center;
+    color: #333; /* Cor do texto */
+}
+
+th {
+    background-color: #f9f9f9; /* Fundo mais claro para cabeçalhos */
+    color: #ff6600; /* Cor laranja para o texto dos cabeçalhos */
+}
+
+.funcionario-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc; /* Cor da borda */
+    border-radius: 4px;
+    background-color: #ffffff; /* Fundo claro para selects */
+    color: #333; /* Cor do texto nos selects */
+}
+
+.funcionario-select option {
+    background-color: #ffffff; /* Cor de fundo das opções */
+    color: #333; /* Cor do texto das opções */
+}
+
+#disponibilidade .funcionario-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc; /* Cor da borda */
+    border-radius: 4px;
+    background-color: #ffffff; /* Fundo claro para selects */
+    color: #333; /* Cor do texto nos selects */
+}
+
+#disponibilidade .funcionario-select option {
+    background-color: #ffffff; /* Cor de fundo das opções */
+    color: #333; /* Cor do texto das opções */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1; /* Fundo mais claro ao passar o mouse */
+}
+
+#disponibilidade th {
+    background-color: #f0f0f0; /* Fundo claro para cabeçalhos de disponibilidade */
+}
+
+#disponibilidade tbody tr:hover {
+    background-color: #f1f1f1; /* Fundo mais claro ao passar o mouse */
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px 2px #ff6600; /* Sombra laranja ao focar no select */
+}
+
+td.editable {
+    cursor: pointer;
+}
+
+td.editable:focus {
+    outline: none;
+    background-color: #ffcc99; /* Cor de destaque laranja ao focar */
+    color: #333; /* Cor do texto ao focar */
+    border: 1px solid #ff6600;
+}
+
+button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #ff6600; /* Cor de fundo laranja para o botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e65c00; /* Laranja mais escuro ao passar o mouse */
+}
+
+.flx-rw {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flx-rw-r {
+    display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu > img{
+    width: 120px;
+}
+
+
+.flx-cl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para o select e a célula com cor de fundo */
+.select-selecionado {
+    background-color: #ffefdd; /* Cor de fundo laranja claro para o select */
+    color: #333; /* Cor do texto */
+}
+
+/* Estilo para a célula com cor de fundo */
+.celula-selecionada {
+    background-color: #ffefdd; /* Cor de fundo laranja claro para a célula */
+}
+
+.dias-disponiveis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dias-disponiveis label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.dias-disponiveis input[type="checkbox"] {
+    margin-right: 5px;
+}
