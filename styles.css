@@ -40,6 +40,7 @@ th {
     color: #ff6600; /* Cor laranja para o texto dos cabeçalhos */
 }
 
+/* Estilo para selects */
 .funcionario-select {
     width: 100%;
     padding: 8px;
@@ -47,11 +48,24 @@ th {
     border-radius: 4px;
     background-color: #ffffff; /* Fundo claro para selects */
     color: #333; /* Cor do texto nos selects */
+    cursor: pointer;
+    font-size: 16px; /* Ajuste do tamanho da fonte para melhor visibilidade */
 }
 
 .funcionario-select option {
     background-color: #ffffff; /* Cor de fundo das opções */
     color: #333; /* Cor do texto das opções */
+}       
+
+.select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc; /* Cor da borda */
+    border-radius: 4px;
+    background-color: #ffffff; /* Fundo claro para selects */
+    color: #333; /* Cor do texto nos selects */
+    cursor: pointer;
+    font-size: 16px; /* Ajuste do tamanho da fonte para melhor visibilidade */
 }
 
 #disponibilidade .funcionario-select {
@@ -160,7 +174,7 @@ button:hover {
 .celula-selecionada {
     background-color: #ffefdd; /* Cor de fundo laranja claro para a célula */
 }
-
+ 
 .dias-disponiveis {
     display: flex;
     flex-wrap: wrap;
@@ -175,4 +189,63 @@ button:hover {
 
 .dias-disponiveis input[type="checkbox"] {
     margin-right: 5px;
+} 
+
+.dia-checkbox {
+    position: relative;
+    cursor: pointer;
 }
+
+.dia-checkbox::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid orange;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.dia-checkbox:checked::before {
+    background-color: orange;
+}
+
+.dia-checkbox:checked::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+label {
+    padding-left: 20px; 
+    line-height: 20px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.dia-checkbox:checked + label::before {
+    border-color: orange;
+}
+

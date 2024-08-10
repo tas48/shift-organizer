@@ -10,18 +10,18 @@
     <div class="container">
         <div class="menu flx-rw-r">
             <img src="./logo.png" alt="">
-            <h2>Escala de funcionários</h2>
+            <h1>Escala de funcionários</h2>
             <button onclick="window.location.href='funcionario.html'">Tabela Funcionários</button>
+            <button id="gerar-pdf">Gerar PDF</button>
         </div>
         
-        <h3>Selecione o Setor correspondente</h3>
-        <select id="filtro-setor">
+        <h3>Selecione o Setor</h3>
+        <select id="filtro-setor" class="select">r
             <option value="Todos">Todos</option>
             <option value="Atendimento">Atendimento</option>
             <option value="Cozinha">Cozinha</option>
             <option value="Entregas">Entregas</option>
         </select>
-        <h1>Controlador de Turnos</h1>
 
         <!-- Tabela de Escala -->
         <table id="escala">
@@ -48,5 +48,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="pdf.js"></script>
 </body>
 </html>
