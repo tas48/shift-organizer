@@ -1,16 +1,13 @@
-// Função para carregar os funcionários do localStorage
-function carregarFuncionariosDoStorage() {
-    const dados = localStorage.getItem('funcionarios');
-    if (dados) {
-        funcionarios = JSON.parse(dados);
-    } else {
-        funcionarios = []; // Inicializa com um array vazio se não houver dados
-    }
-}
+// script.js
 
-// Função para salvar os funcionários no localStorage
-function salvarFuncionarios() {
-    localStorage.setItem('funcionarios', JSON.stringify(funcionarios));
+import { obterFuncionarios, atualizarFuncionario } from './database.js';
+
+let funcionarios = [];
+
+// Função para carregar os funcionários do Firestore
+async function carregarFuncionariosDoFirestore() {
+    funcionarios = await obterFuncionarios();
+    carregarFuncionarios(); // Carrega os funcionários nos selects
 }
 
 // Função para carregar as opções de funcionários no select
@@ -40,7 +37,7 @@ function filtrarPorSetor(setor) {
         select.innerHTML = '<option value="">Selecione</option>'; // Opção padrão
 
         funcionarios.forEach(funcionario => {
-            if (funcionario.diasDisponiveis.includes(dia) && (setor === 'Todos' || funcionario.setor === setor)) {
+            if (funcionario.diasDisponiveis.includes(dia) && funcionario.setor === setor) {
                 const option = document.createElement('option');
                 option.value = funcionario.nome;
                 option.textContent = funcionario.nome;
@@ -91,21 +88,8 @@ function removerLinhaEscala() {
     }
 }
 
-// Função para adicionar um novo funcionário na tabela de disponibilidade
-function adicionarFuncionarioDisponibilidade() {
-    const novoFuncionario = {
-        nome: `Funcionario ${funcionarios.length + 1}`,
-        telefone: '',
-        setor: '',
-        diasDisponiveis: []
-    };
-    funcionarios.push(novoFuncionario);
-    salvarFuncionarios(); // Salvar atualização no localStorage
-    carregarFuncionarios(); // Recarregar selects para incluir o novo funcionário
-}
-
 // Função para lidar com as mudanças nas células editáveis
-function handleCellEdit(e) {
+async function handleCellEdit(e) {
     const target = e.target;
     if (target.classList.contains('editable')) {
         const nome = target.getAttribute('data-nome');
@@ -119,9 +103,18 @@ function handleCellEdit(e) {
         } else {
             funcionario[field] = target.textContent;
         }
-        salvarFuncionarios(); // Salvar atualização no localStorage
+
+        // Atualizar o funcionário no Firestore
+        await atualizarFuncionario(funcionario.id, funcionario);
     }
 }
+
+function adicionarLinhasIniciais(numLinhas) {
+    for (let i = 0; i < numLinhas; i++) {
+        adicionarLinhaEscala();
+    }
+}
+
 
 // Inicializar
 document.getElementById('adicionar-escala').addEventListener('click', adicionarLinhaEscala);
@@ -131,8 +124,8 @@ document.getElementById('filtro-setor').addEventListener('change', function() {
     filtrarPorSetor(setorSelecionado);
 });
 
-// Carregar os funcionários do localStorage e inicializar a tabela
+// Carregar os funcionários do Firestore e inicializar a tabela
 document.addEventListener('DOMContentLoaded', () => {
-    carregarFuncionariosDoStorage(); // Carregar funcionários do localStorage
-    carregarFuncionarios(); // Carregar funcionários nos selects
+    carregarFuncionariosDoFirestore(); // Carregar funcionários do Firestore
+    adicionarLinhasIniciais(4)
 });

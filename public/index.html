@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controlador de Turnos</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
     <div class="container">
         <div class="menu flx-rw-r">
-            <img src="./logo.png" alt="">
+            <img src="./assets/logo.png" alt="">
             <h1>Escala de funcionários</h2>
-            <button onclick="window.location.href='funcionario.html'">Tabela Funcionários</button>
-            <button id="gerar-pdf">Gerar PDF</button>
+            <button onclick="window.location.href='./pages/funcionario.html'">
+                <img src="./assets/table.svg" alt="">
+                Tabela Funcionários
+            </button>
+            <button id="gerar-pdf">
+                <img src="./assets/file.svg" alt="">
+                Gerar PDF
+            </button>
         </div>
         
         <h3>Selecione o Setor</h3>
@@ -47,8 +53,9 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+
+    <script type="module" src="./context/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-    <script src="pdf.js"></script>
+    <script src="./helper/pdf.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    max-width: 80%;
+    max-width: 95%;
     margin: auto;
     background-color: #ffffff; /* Cor de fundo dos containers */
     padding: 20px;
@@ -213,6 +213,9 @@ button:hover {
     background-color: orange;
 }
 
+.name{
+    width: 100px;
+}
 .dia-checkbox:checked::after {
     content: "";
     position: absolute;
@@ -248,3 +251,14 @@ label::before {
 .dia-checkbox:checked + label::before {
     border-color: orange;
 }
+
+
+.delete-btn{
+    width: 35px;
+    height: 35px;
+}
+
+.delete-btn > img{
+    color: #ccc;
+}
+
