@@ -248,4 +248,3 @@ label::before {
 .dia-checkbox:checked + label::before {
     border-color: orange;
 }
-

@@ -1,3 +1,25 @@
+// Exemplo de array de funcionários
+let funcionarios = [
+    {
+        nome: "João Silva",
+        telefone: "1234-5678",
+        setor: "Atendimento",
+        diasDisponiveis: ["Segunda", "Quarta", "Sexta"]
+    },
+    {
+        nome: "Maria Oliveira",
+        telefone: "9876-5432",
+        setor: "Cozinha",
+        diasDisponiveis: ["Terça", "Quinta", "Sábado"]
+    },
+    {
+        nome: "Carlos Santos",
+        telefone: "1357-2468",
+        setor: "Entregas",
+        diasDisponiveis: ["Segunda", "Terça", "Domingo"]
+    }
+];
+
 // Função para salvar os funcionários no localStorage
 function salvarFuncionarios() {
     localStorage.setItem('funcionarios', JSON.stringify(funcionarios));
