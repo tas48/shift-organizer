@@ -18,7 +18,7 @@ function criarTabelaPDF(dados) {
     let htmlTabela = `
         <div style="font-family: Arial, sans-serif; padding: 20px;">
             <h1>Escala de Funcionários</h1>
-            <h3>Setor Selecionado: ${document.getElementById('filtro-setor').value}</h3>
+            <h3>Setor: ${document.getElementById('filtro-setor').value}</h3>
             <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
                 <thead>
                     <tr>
