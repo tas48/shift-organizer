@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disponibilidade dos Funcionários</title>
+    <title>Editar Funcionário</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="icon" href="../assets/logo.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-        <h2>Disponibilidade dos Funcionários</h2>
+        <h2>Editar Funcionário</h2>
+        <button id="salvar-edicoes">Salvar Edições</button>
         <table id="disponibilidade">
             <thead>
                 <tr>
@@ -20,19 +21,13 @@
                 </tr>
             </thead>
             <tbody id="tabela-disponibilidade">
-                <!-- Dados dos funcionários serão inseridos aqui dinamicamente -->
+                <!-- Dados do funcionário serão inseridos aqui dinamicamente -->
             </tbody>
         </table>
         <div class="flx-rw">
-            <button id="adicionar-disponibilidade">Adicionar Funcionário</button>
-            <button id="voltar-index" onclick="window.location.href='../index.html'">Voltar</button>
-
         </div>
-        
     </div>
 
-    <script type="module"src="../context/funcionario.js"></script>
-    <script src="../helper/link.js"></script>
-    
+    <script type="module" src="../helper/editor.js"></script>
 </body>
 </html>

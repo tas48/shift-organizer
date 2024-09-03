@@ -1,6 +1,6 @@
 // database.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.12.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc, onSnapshot, getDoc } from "https://www.gstatic.com/firebasejs/9.12.0/firebase-firestore.js";
 
 // Configurações do Firebase
 const firebaseConfig = {
@@ -67,4 +67,22 @@ export async function deletarFuncionario(id) {
     }
 }
 
+    // Função para obter um funcionário por ID
+export async function obterFuncionarioPorId(id) {
+    try {
+        const funcionarioDoc = doc(db, "funcionarios", id); 
+        const docSnap = await getDoc(funcionarioDoc);
+
+        if (docSnap.exists()) {
+            return { id: docSnap.id, ...docSnap.data() };
+        } else {
+            console.error('Funcionário não encontrado:', id);
+
+            return null;
+        }
+        } catch (error) {
+            console.error("Erro ao obter funcionário por ID: ", error, id);
+            return null;
+        }
+}
 

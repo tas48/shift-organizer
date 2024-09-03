@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Links de Funcionários</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+    
+        h2 {
+            margin-bottom: 20px;
+            color: #ff6600; /* Cor laranja para os títulos */
+        }
+    
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+    
+        th, td {
+            border: 1px solid #ccc; /* Cor da borda mais clara */
+            padding: 10px;
+            text-align: left;
+        }
+    
+        th {
+            background-color: #f9f9f9; /* Fundo mais claro para cabeçalhos */
+            color: #ff6600; /* Cor laranja para o texto dos cabeçalhos */
+            text-align: center;
+        }
+    
+        td {
+            background-color: #ffffff; /* Fundo claro para células */
+            color: #333; /* Cor do texto */
+            text-align: center;
+        }
+    
+        button.copy-btn {
+            padding: 5px 10px;
+            background-color: #4CAF50; /* Verde */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    
+        button.copy-btn:hover {
+            background-color: #45a049; /* Verde mais escuro ao passar o mouse */
+        }
+    
+        .flx-rw {
+            margin-top: 20px;
+        }
+    </style>    
+</head>
+<body>
+    <div class="container">
+        <h2>Gerar Links de Funcionários</h2>
+        <table id="lista-links">
+            <!-- A lista de funcionários e botões será inserida aqui -->
+        </table>
+        <div class="flx-rw">
+            <button onclick="window.location.href='../index.html'">Voltar</button>
+        </div>
+    </div>
+
+    <script type="module" src="../helper/links.js"></script>
+</body>
+</html>
